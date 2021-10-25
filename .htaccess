@@ -1,0 +1,13 @@
+RewriteEngine on
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+RewriteRule ^([a-z0-9-]+)/?$ profissional.php?username=$1 [QSA,NC]
+RewriteRule ^perfil/editar/([a-z0-9-]+)/?$ editar-perfil.php?user=$1 [QSA,NC]
+RewriteRule ^senha/redefinir/([a-z0-9-]+)/?$ redefinir-senha.php?username=$1 [QSA,NC]
+RewriteRule ^gerenciar/profissional/([a-z0-9-]+)/?$ gerenciar-profissional.php?username=$1 [QSA,NC]
+RewriteRule ^dashboard/funcionario$ dash-funcionarios.php [QSA,NC]
+
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php [L]

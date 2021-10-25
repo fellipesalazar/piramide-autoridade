@@ -1,0 +1,278 @@
+/*
+
+developed by: Fellipe Salazar
+site: www.fellipesalazar.com.br
+version: 1.0
+
+font: Flexo
+        
+*/
+
+
+/* flexo */
+
+@font-face {
+    font-family: 'flexo-light';
+    src: url('../fonts/flexo/Flexo-Light.woff');
+}
+
+@font-face {
+    font-family: 'flexo-regular';
+    src: url('../fonts/flexo/Flexo-Regular.woff');
+}
+
+@font-face {
+    font-family: 'flexo-medium';
+    src: url('../fonts/flexo/Flexo-Medium.woff');
+}
+
+@font-face {
+    font-family: 'flexo-demi';
+    src: url('../fonts/flexo/Flexo-Demi.woff');
+}
+
+@font-face {
+    font-family: 'flexo-heavy';
+    src: url('../fonts/flexo/Flexo-Heavy.woff');
+}
+
+@font-face {
+    font-family: 'flexo-bold';
+    src: url('../fonts/flexo/Flexo-Bold.woff');
+}
+
+@font-face {
+    font-family: 'flexo-black';
+    src: url('../fonts/flexo/Flexo-Black.woff');
+}
+
+
+@keyframes pulse-button {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 139, 34, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(34, 139, 34, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 139, 34, 0);
+    }
+}
+
+:root {
+    --roxo: #7755cc;
+}
+
+* {
+    outline: none;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    font-family: 'flexo-regular';
+}
+
+.back {
+    width: 100%;
+    min-height: 100vh;
+    background: #111;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/personal.jpg.png);
+    background-blend-mode: overlay;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.secao, .matriz {
+    text-align: center;
+    max-width: 800px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.secao.bem-vindo {
+    display: flex;
+}
+
+.logo {
+    width: 70px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 300%;
+    font-family: flexo-bold;
+    color: var(--roxo);
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 180%;
+    line-height: 1.3em;
+    margin-top: -10px;
+    margin-bottom: 50px;
+    font-family: flexo-medium;
+}
+
+h3 {
+    font-size: 130%;
+    line-height: 1.3em;
+    margin-bottom: 30px;
+}
+
+.texto {
+    font-size: 110%;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+}
+
+.texto:last-of-type {
+    margin-bottom: 50px;
+}
+
+b {
+    color: var(--roxo);
+}
+
+.btn {
+    width: 250px;
+    height: 50px;
+    border-radius: 30px;
+    background: transparent;
+    color: #fff;
+    font-family: flexo-medium;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    font-size: 100%;
+    cursor: pointer;
+    outline: none;
+    transition: .25s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background: var(--roxo);
+    border: 2px solid var(--roxo);
+}
+
+.select {
+    width: 300px;
+    height: 50px;
+    border-radius: 30px;
+    background: transparent;
+    color: #fff;
+    font-family: flexo-medium;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    font-size: 100%;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+.info:nth-child(2n) {
+    margin: 0;
+}
+
+.info p {
+    line-height: 25px;
+}
+
+.info.one {
+    margin-top: 50px;
+}
+
+.enter {
+    height: 25px;
+    filter: invert();
+    margin-right: 6px;
+}
+
+.nav {
+    width: 200px;
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-prev, .nav-next {
+    border: 3px solid #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: .25s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-prev:hover, .nav-next:hover {
+    border: 3px solid var(--roxo);
+    background: var(--roxo);
+}
+
+.nav-prev {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 200%;
+    }
+    
+    h2 {
+        font-size: 130%;
+    }
+    
+    h3, .texto {
+        font-size: 100%;
+    }
+    
+    .select {
+        width: 80%;
+        height: 40px;
+        line-height: 36px
+    }
+    
+    .info {
+        display: none;
+    }
+    
+    .enter {
+        height: 16px;
+        margin-right: 3px;
+    }
+    
+    .matriz {
+        padding: 100px 0;
+    }
+    
+    .info p {
+        line-height: 20px;
+        vertical-align: bottom;
+    }
+}
